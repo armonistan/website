@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Header from "./Header";
+import Header from "../components/Header";
 
-export default class Layout extends React.Component {
+export default class Landing extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -25,9 +25,6 @@ export default class Layout extends React.Component {
 		return (
 			<div>
 				<h1 className="green-text"> Oh snap </h1>
-				<Link to=""> home </Link>
-				<Link to="archives">archives</Link>
-				<Link to="settings">settings</Link>
 			</div>
 		);
 	}

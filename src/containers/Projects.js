@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 
-export default class Archives extends React.Component {
+export default class Projects extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			refresh: true
 		}
-		this.title = "Archives";
+		this.title = "Projects";
 	}
 	
 	changeTitle(title) {
@@ -23,7 +23,7 @@ export default class Archives extends React.Component {
 		
 		return (
 			<div>
-				{this.list}
+				{this.title}
 			</div>
 		);
 	}

@@ -1,13 +1,13 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../components/Header";
 
-export default class Featured extends React.Component {
+export default class Blog extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			refresh: true
 		}
-		this.title = "Featured";
+		this.title = "Blog";
 	}
 	
 	changeTitle(title) {
@@ -23,7 +23,7 @@ export default class Featured extends React.Component {
 		
 		return (
 			<div>
-				{this.list}
+				{this.title}
 			</div>
 		);
 	}

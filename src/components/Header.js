@@ -7,7 +7,7 @@ export default class Header extends React.Component {
 		this.navigationOptions = [
 			<Link to="home">Home</Link>,
 			<Link to="about">About</Link>,
-			<Link to="posts">Posts</Link>,
+			<Link to="blog">Blog</Link>,
 			<Link to="projects">Projects</Link>
 		];
 	}

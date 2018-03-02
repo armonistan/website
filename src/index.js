@@ -7,7 +7,7 @@ import './style/app.css';
 import Header from './components/Header';
 import About from './containers/About';
 import Blog from './containers/Blog';
-import Home from './containers/Home';
+import Landing from './containers/Landing';
 import Projects from './containers/Projects';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -18,8 +18,10 @@ ReactDOM.render(
 	<HashRouter>
 		<div>
 			<Header></Header>
-			<Route path="/archives" exact component={Archives}></Route>
-			<Route path="/settings" exact component={Settings}></Route>
+			<Route path="/about" exact component={About}></Route>
+			<Route path="/blog" exact component={Blog}></Route>
+			<Route path="/home" exact component={Landing}></Route>
+			<Route path="/projects" exact component={Projects}></Route>
 		</div>
 	</HashRouter>, app);
 registerServiceWorker();
