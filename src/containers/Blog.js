@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header";
+import PostEntryList from "../components/PostEntryList";
 
 export default class Blog extends React.Component {
 	constructor() {
@@ -15,15 +15,11 @@ export default class Blog extends React.Component {
 		this.setState({refresh: true});
 	}
 	
-	render() {
-		this.list = [
-			<Header title={this.title} changeTitle={this.changeTitle.bind(this)}/>,
-			<Header title="World" changeTitle={this.changeTitle.bind(this)}/>
-		]
-		
+	render() {	
 		return (
 			<div>
-				{this.title}
+				<div>{this.title}</div>
+				<PostEntryList/>
 			</div>
 		);
 	}
