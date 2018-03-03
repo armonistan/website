@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 
 import './style/app.css';
 
@@ -15,7 +15,7 @@ import registerServiceWorker from './registerServiceWorker';
 const app = document.getElementById('root');
 
 ReactDOM.render(
-	<HashRouter>
+	<BrowserRouter>
 		<div>
 			<Header></Header>
 			<Route path="/about" exact component={About}></Route>
@@ -23,5 +23,5 @@ ReactDOM.render(
 			<Route path="/home" exact component={Landing}></Route>
 			<Route path="/projects" exact component={Projects}></Route>
 		</div>
-	</HashRouter>, app);
+	</BrowserRouter>, app);
 registerServiceWorker();
