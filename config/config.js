@@ -2,5 +2,5 @@
 
 module.exports = {
 	db: 'mongodb://localhost:27017/testDb',
-	db_dev: 'mongodb://localhost:27017/testDb',
+	db_dev: 'mongodb://localhost:27017/website',
 };

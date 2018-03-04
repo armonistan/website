@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'whatwg-fetch';
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 class Home extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/counters')
+    fetch('/api/posts')
       .then(res => res.json())
       .then(json => {
         this.setState({
@@ -91,15 +92,11 @@ class Home extends Component {
         <ul>
           { this.state.counters.map((counter, i) => (
             <li key={i}>
-              <span>{counter.count} </span>
-              <button onClick={() => this.incrementCounter(i)}>+</button>
-              <button onClick={() => this.decrementCounter(i)}>-</button>
-              <button onClick={() => this.deleteCounter(i)}>x</button>
+              <div>{counter.date}</div>
+			  {ReactHtmlParser(counter.content)}
             </li>
           )) }
         </ul>
-
-        <button onClick={this.newCounter}>New counter</button>
       </div>
     );
   }

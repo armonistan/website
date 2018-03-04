@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from "react-router-dom";
 
-import './style/app.css';
+import './style/app.scss';
 
 import Header from './components/Header';
 import About from './containers/About';
@@ -18,6 +18,7 @@ ReactDOM.render(
 	<BrowserRouter>
 		<div>
 			<Header></Header>
+			<Route path="/" exact component={Landing}></Route>
 			<Route path="/about" exact component={About}></Route>
 			<Route path="/blog" exact component={Blog}></Route>
 			<Route path="/home" exact component={Landing}></Route>
