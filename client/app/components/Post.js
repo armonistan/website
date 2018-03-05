@@ -1,16 +1,24 @@
 import React from "react";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
 export default class Post extends React.Component {	
-	handleChange(e){
-		const title = e.target.value;
-		this.props.changeTitle(title);
+	constructor(){
+		super();
+		console.log("post");
 	}
 	
 	render() {
 		return (
-			<div>
-				<h1>{this.props.title}</h1>
-				<input onChange={this.handleChange.bind(this)}/>
+			<div className="post">
+				<div className="title">
+					{this.props.post.title}
+				</div>
+				<div className="date">
+					{this.props.post.date}
+				</div>
+				<div>
+					{ReactHtmlParser(this.props.post.content)}
+				</div>
 			</div>
 		);
 	}

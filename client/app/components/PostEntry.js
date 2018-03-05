@@ -3,19 +3,22 @@ import React from "react";
 export default class PostEntry extends React.Component {	
 	constructor(){
 		super();
-		this.post = {
-			title: "Hello World",
-			description: "Test Post 101",
-			imageSource: "https://i5.walmartimages.ca/images/Large/580/6_r/875806_R.jpg?odnBound=460"
-		};
 	}
+	
+	handleOnClick(){
+		console.log(this);
+		this.props.handleOnClick(this.props.post);
+	}	
 	
 	render() {
 		return (
-			<div>
-				<div>{this.post.title}</div>
-				<div>{this.post.description}</div>
-				<img src={this.post.imageSource} width="200" height="200"/>
+			<div onClick={this.handleOnClick.bind(this)} className="post-entry">
+				<div className="title">
+					{this.props.post.title}
+				</div>
+				<div className="date">
+					{this.props.post.date}
+				</div>
 			</div>
 		);
 	}

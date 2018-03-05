@@ -8,6 +8,10 @@ const PostsSchema = new mongoose.Schema({
   content: {
 	type: String,
 	default: ""
+  },
+  title: {
+	type: String,
+	default: ""
   }
 });
 

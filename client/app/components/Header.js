@@ -5,17 +5,17 @@ export default class Header extends React.Component {
 	constructor(){
 		super();
 		this.navigationOptions = [
-			<Link to="home">Home</Link>,
-			<Link to="about">About</Link>,
-			<Link to="blog">Blog</Link>,
-			<Link to="projects">Projects</Link>
+			<Link className="header-text" to="home">Home</Link>,
+			<Link className="header-text" to="about">About</Link>,
+			<Link className="header-text" to="blog">Blog</Link>,
+			<Link className="header-text" to="projects">Projects</Link>
 		];
 	}
 	
 	render() {
 		return (
-			<div>
-				{this.navigationOptions}
+			<div className="header row-padding">
+				<span className="large-text">{this.navigationOptions}</span>
 			</div>
 		);
 	}

@@ -2,20 +2,25 @@ import React from "react";
 import PostEntry from "./PostEntry";
 
 export default class PostEntryList extends React.Component {	
-	constructor(){
+	constructor(props){
 		super();
-		this.posts = [
-			<PostEntry></PostEntry>,
-			<PostEntry></PostEntry>,
-			<PostEntry></PostEntry>,
-			<PostEntry></PostEntry>
-		];
+		this.state = {
+			posts: props.posts
+		}
+	}
+	
+	selectPost(post){
+		this.props.selectPost(post);
 	}
 	
 	render() {
 		return (
-			<div>
-				{this.posts}
+			<div className="post-entry-list">
+				{ this.state.posts.map((post, i) => (
+					<div key={i}>
+						<PostEntry post={post} handleOnClick={this.selectPost.bind(this)}/>
+					</div>
+				))}
 			</div>
 		);
 	}

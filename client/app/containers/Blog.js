@@ -1,25 +1,46 @@
 import React from "react";
+import 'whatwg-fetch';
 import PostEntryList from "../components/PostEntryList";
+import Post from "../components/Post";
 
 export default class Blog extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			refresh: true
+			posts: [],
+			postEntryList: "Loading",
+			selectedPost: "Loading Post"
 		}
+		
+		fetch('/api/posts')
+		.then(res => res.json())
+		.then(json => {
+			this.setState({
+				posts: json
+			});
+			this.setState({
+				postEntryList: <PostEntryList posts={this.state.posts} selectPost={this.selectPost.bind(this)}/>,
+				selectedPost: <Post post={this.state.posts[0]}/>,
+			});
+		});
+		
 		this.title = "Blog";
 	}
 	
-	changeTitle(title) {
-		this.title = title;
-		this.setState({refresh: true});
+	selectPost(selectedPost) {
+		this.setState({
+			selectedPost: <Post post={selectedPost}/>,
+		});;
 	}
 	
 	render() {	
 		return (
 			<div>
 				<div>{this.title}</div>
-				<PostEntryList/>
+				<div className="blog-page">
+					{this.state.postEntryList}
+					{this.state.selectedPost}
+				</div>
 			</div>
 		);
 	}
