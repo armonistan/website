@@ -35,7 +35,7 @@ export default class Blog extends React.Component {
 	
 	render() {	
 		return (
-			<div>
+			<div class="component-page">
 				<div>{this.title}</div>
 				<div className="blog-page">
 					{this.state.postEntryList}

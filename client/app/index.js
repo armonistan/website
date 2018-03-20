@@ -17,7 +17,7 @@ const app = document.getElementById('root');
 
 ReactDOM.render(
 	<BrowserRouter>
-		<div>
+		<div class="full-page">
 			<Header/>
 			<Route path="/" exact component={Landing}></Route>
 			<Route path="/about" exact component={About}></Route>

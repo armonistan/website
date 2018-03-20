@@ -18,7 +18,7 @@ export default class Landing extends React.Component {
 	
 	render() {
 		return (
-			<div>
+			<div className="full-page">
 				<Home/>
 			</div>
 		);

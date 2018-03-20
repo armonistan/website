@@ -15,7 +15,7 @@ export default class PostEntryList extends React.Component {
 	
 	render() {
 		return (
-			<div className="post-entry-list">
+			<div className="post-entry-list full-page">
 				{ this.state.posts.map((post, i) => (
 					<div key={i}>
 						<PostEntry post={post} handleOnClick={this.selectPost.bind(this)}/>

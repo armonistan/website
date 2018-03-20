@@ -3,14 +3,14 @@
 */
 
 //base html overwrites
-html {
-  height: 100%;
-}
-body {
+
+
+html, body {
+	height: 100%;
 	min-height: 100%;
-	font-family: 'sans-serif';
+	font-family: 'san-serif';
 	margin: 0px;
-	background-color: rgba(250, 240, 224, .4);
+	background-color: rgba(250, 240, 224, .15);
 }
 
 a {
@@ -22,8 +22,23 @@ a:hover {
 	color: rgba(256, 256, 256, 1);
 }
 
+p {
+	color: #3b3b3b;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //generic styling
+.full-page {
+	height: 100%;
+	min-height: 100%;
+}
+
+.component-page {
+	height: calc(100% - 127px);
+	padding: 24px;
+}
+
 .large-text {
 	font-size: 24px;
 }
@@ -42,11 +57,12 @@ a:hover {
 .header {
 	padding-top: 32px;
 	padding-bottom: 32px;
-	margin-bottom: 16px;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.55);
-	background-color: rgba(250, 91, 77, .9);
+	background-color: rgba(70, 61, 127, .9);
 	text-align: center;
 }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //blog styling
 .blog-page {
@@ -81,4 +97,40 @@ a:hover {
 	.date {
 		margin-bottom: 8px;
 	}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//landing styling 
+.post-snippet {
+	padding: 32px 32px 32px 32px;
+	border-bottom: solid;
+	border-bottom-color: rgba(70, 61, 127, .4);
+	border-bottom-width: 2px;
+	
+	.title {
+		@extend .large-text;
+		margin-bottom: 8px;
+	}
+	
+	.date {
+		margin-bottom: 8px;
+	}
+	
+	.tag {
+		background: #EEE;
+		border-radius: 8px;
+		font-weight: 550;
+		padding: 4px;
+		margin: 8px;
+		color: #333;
+	}
+}
+
+.post-snippet:first-child {
+	padding: 16px 32px 32px 32px;
+}
+
+.post-snippet:last-child {
+	border-bottom: none;
 }

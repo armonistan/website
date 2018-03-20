@@ -1,15 +1,14 @@
 import React from "react";
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
 
-export default class Post extends React.Component {	
+export default class PostSnippet extends React.Component {	
 	constructor(){
 		super();
-		console.log("post");
 	}
 	
 	render() {
 		return (
-			<div className="post full-page">
+			<div className="post-snippet">
 				<div className="title">
 					{this.props.post.title}
 				</div>
@@ -18,6 +17,11 @@ export default class Post extends React.Component {
 				</div>
 				<div>
 					{ReactHtmlParser(this.props.post.content)}
+				</div>
+				<div align="center">
+					{ this.props.post.tags.map((tag, i) => (
+						<span className="tag">{tag}</span>
+					))}
 				</div>
 			</div>
 		);
